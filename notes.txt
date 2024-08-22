@@ -20,3 +20,6 @@ cd into the paperwork folder
 
 python manage.py runserver
 This will run the server for django
+
+python manage.py startapp projects
+starts a new app named projects
