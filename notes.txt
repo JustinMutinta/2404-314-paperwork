@@ -1,0 +1,22 @@
+You need to create an environment for this, otherwise django-admin will not work.
+The command for this is python -m venv env
+This command is for windows.
+env is the name of the virtual environment. choose whatever you want
+
+env\Scripts\activate
+This will activate the virtual environment
+
+then pip install Django
+nuff said.
+
+django-admin
+will list all the possible commands you want.
+
+django-admin startproject paperwork
+This creates the project for "paperwork"
+I moved the env folder into the paperwork folder.
+
+cd into the paperwork folder
+
+python manage.py runserver
+This will run the server for django
