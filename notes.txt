@@ -3,6 +3,12 @@ The command for this is python -m venv env
 This command is for windows.
 env is the name of the virtual environment. choose whatever you want
 
+For mac, its pip3 install virtualenv
+then virtualenv mac_env to create the env
+then source mac_env/bin/activate
+if you get a permission error, do chmod +x mac_env/bin/activate
+
+
 env\Scripts\activate
 This will activate the virtual environment
 

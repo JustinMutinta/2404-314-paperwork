@@ -2,9 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def projects(request):
-    return HttpResponse('Here are our Products')
+    return render(request, 'projects.html')
 
 def project(request, pk):
-    return HttpResponse('Here is a single Product' + ' ' + str(pk))
+    return render(request, 'single-project.html')
