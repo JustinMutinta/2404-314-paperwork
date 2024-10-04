@@ -10,6 +10,12 @@
 <p>Number is less than 10</p>
 {% endif %}
 
+<ul>
+    {% for project in projects %}
+        <li>Title:{{project.title}} --- {{project.description}}</li>
+    {% endfor %}
+</ul>
+
 
     <p>Words and things</p>
 
