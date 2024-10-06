@@ -4,5 +4,32 @@
 
 <h1>HOME</h1>
 
+<table class="table table-striped table-hover table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nomenclature</th>
+            <th scope="col">Nsn</th>
+            <th scope="col">Model</th>
+            <th scope="col">Serial</th>
+            <th scope="col">TM_Number</th>
+            <th scope="col">TM_Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for testSet in testSets %}
+            <tr>
+                <td><a href="">{{testSet.id}}</a></td>
+                <td>{{testSet.nomenclature}} --- {{testSet.id}}</td>
+                <td>{{testSet.nsn}}</td>
+                <td>{{testSet.model}}</td>
+                <td>{{testSet.serial_number}}</td>
+                <td>{{testSet.tm_number}}</td>
+                <td>{{testSet.tm_date}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 
 {% endblock content %}
