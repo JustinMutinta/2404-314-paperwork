@@ -16,4 +16,6 @@ def home(request):
     testSets = TestSet.objects.all()
     return render(request, 'home.html', {'testSets': testSets})
 
-# def testset(request, pk):
+def testSet(request, pk):
+    testSet = TestSet.objects.get(id=pk)
+    return render(request, 'testSet.html', {'testSet': testSet})

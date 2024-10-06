@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% block content%}
+
+<div class="card">
+  <div class="card-header">
+      {{testSet.nomenclature}}
+      {{testSet.serial_number}}
+  </div>
+  <div class="card-body">
+    <p class="card-title">
+        Nomen------{{testSet.nomenclature}} <br/>
+        Nsn---------{{testSet.nsn}} <br/>
+        Model-------{{testSet.model}} <br/>
+        Serial--------{{testSet.serial_number}} <br/>
+        TM_number-{{testSet.tm_number}} <br/>
+        TM_date----{{testSet.tm_date}}
+    </p>
+
+  </div>
+</div>
+
+<br/><br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
+<a href="{% url 'home' %}" class="btn btn-secondary">Edit</a>
+<a href="{% url 'home' %}" class="btn btn-secondary">Print</a>
+<a href="{% url 'home' %}" class="btn btn-danger">Delete</a>
+
+
+{% endblock content %}

@@ -19,8 +19,8 @@
     <tbody>
         {% for testSet in testSets %}
             <tr>
-                <td><a href="">{{testSet.id}}</a></td>
-                <td>{{testSet.nomenclature}} --- {{testSet.id}}</td>
+                <td><a href="{% url 'testSet' testSet.id %}">{{testSet.id}}</a></td>
+                <td>{{testSet.nomenclature}}</td>
                 <td>{{testSet.nsn}}</td>
                 <td>{{testSet.model}}</td>
                 <td>{{testSet.serial_number}}</td>
