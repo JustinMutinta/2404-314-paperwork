@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import TestSet
+from .forms import AddTestSetForm
 
 organization = "Bravo Co. 449th ASB"
 remarks = """
@@ -28,3 +29,13 @@ def delete_testset(request, pk):
     delete_it.delete()
     messages.success(request, "You have deleted the test set successfully")
     return redirect('home')
+
+
+def add_testset(request):
+    form = AddTestSetForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            add_testset = form.save()
+            messages.success(request, "Test Set Added...")
+            return redirect('home')
+    return render(request, 'add_testset.html', {'form':form})
