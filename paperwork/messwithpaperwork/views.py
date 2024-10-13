@@ -49,3 +49,8 @@ def edit_testset(request, pk):
         messages.success(request, "Test set has been updated")
         return redirect('home')
     return render(request, 'edit_testset.html', {'form':form})
+
+
+def print_testset(request, pk):
+    print("Test")
+    return redirect('home')
