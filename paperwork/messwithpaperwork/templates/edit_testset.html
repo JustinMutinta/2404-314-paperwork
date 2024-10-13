@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% block content%}
+
+<h1>Edit TestSet</h1>
+<br/>
+
+<form method="POST" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br/>
+    <button type="submit" class="btn btn-secondary">Edit Test Set</button>
+</form>
+
+
+
+{% endblock %}

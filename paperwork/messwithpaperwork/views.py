@@ -39,3 +39,13 @@ def add_testset(request):
             messages.success(request, "Test Set Added...")
             return redirect('home')
     return render(request, 'add_testset.html', {'form':form})
+
+
+def edit_testset(request, pk):
+    current_record = TestSet.objects.get(id=pk)
+    form = AddTestSetForm(request.POST or None, instance=current_record)
+    if form.is_valid():
+        form.save()
+        messages.success(request, "Test set has been updated")
+        return redirect('home')
+    return render(request, 'edit_testset.html', {'form':form})
