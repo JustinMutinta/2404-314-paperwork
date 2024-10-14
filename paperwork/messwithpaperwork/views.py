@@ -46,11 +46,12 @@ def edit_testset(request, pk):
     form = AddTestSetForm(request.POST or None, instance=current_record)
     if form.is_valid():
         form.save()
-        messages.success(request, "Test set has been updated")
+        messages.success(request, f"Test set {current_record} has been updated")
         return redirect('home')
     return render(request, 'edit_testset.html', {'form':form})
 
 
 def print_testset(request, pk):
     print("Test")
+    messages.success(request, "You have printed ___ successfully")
     return redirect('home')
