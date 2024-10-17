@@ -23,6 +23,7 @@
             <th scope="col">Serial</th>
             <th scope="col">TM_Number</th>
             <th scope="col">TM_Date</th>
+            <th scope="col">Print</th>
         </tr>
     </thead>
     <tbody>
@@ -35,6 +36,7 @@
                 <td>{{testSet.serial_number}}</td>
                 <td>{{testSet.tm_number}}</td>
                 <td>{{testSet.tm_date}}</td>
+                <td><a href="{% url 'print_testset' testSet.id %}">Print</a></td>
             </tr>
         {% endfor %}
     </tbody>

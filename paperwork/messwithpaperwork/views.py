@@ -28,7 +28,7 @@ def testSet(request, pk):
 def delete_testset(request, pk):
     delete_it = TestSet.objects.get(id=pk)
     delete_it.delete()
-    messages.success(request, "You have deleted the test set successfully")
+    messages.success(request, f"You have deleted {delete_it} successfully")
     return redirect('home')
 
 
@@ -37,7 +37,7 @@ def add_testset(request):
     if request.method == "POST":
         if form.is_valid():
             add_testset = form.save()
-            messages.success(request, "Test Set Added...")
+            messages.success(request, "Test Set Added")
             return redirect('home')
     return render(request, 'add_testset.html', {'form':form})
 
@@ -85,7 +85,7 @@ def print_form_314(testSet):
 
     writer.update_page_form_field_values(writer.pages[0], data)
 
-    with open(f"messwithpaperwork/outputforms/outputs/DD314_{testSet.nomenclature}_{testSet.serial_number}.pdf", "wb") as output_stream:
+    with open(f"messwithpaperwork/outputforms/outputs/{testSet.nomenclature}_{testSet.serial_number}_DD314.pdf", "wb") as output_stream:
         writer.write(output_stream)
 
 
@@ -108,5 +108,5 @@ def print_form_2404(testSet):
 
     writer.update_page_form_field_values(writer.pages[0], data)
 
-    with open(f"messwithpaperwork/outputforms/outputs/DA2404_{testSet.nomenclature}_{testSet.serial_number}.pdf", "wb") as output_stream:
+    with open(f"messwithpaperwork/outputforms/outputs/{testSet.nomenclature}_{testSet.serial_number}_DA2404.pdf", "wb") as output_stream:
         writer.write(output_stream)
